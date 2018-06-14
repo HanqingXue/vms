@@ -1,0 +1,31 @@
+body {
+	background-color: transparent;
+}
+
+div#logo {
+	margin: 120px auto 40px;
+	width: 280px;
+}
+
+form#login-form {
+	background: #fff;
+	border: 1px solid #dedede;
+	color: #666;
+	margin: 20px auto;
+	padding: 40px;
+}
+
+div#content {
+	margin: 0 auto;	
+	width: 360px;
+}
+
+html {
+	background: url('../../img/bg-login.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+div#search {
+	height: 20px;
+}

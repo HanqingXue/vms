@@ -1,0 +1,153 @@
+div.section {
+	border-radius: 0;
+	background-color: #fff;
+	border: 1px solid #efefef;
+	margin-bottom: 20px;
+	overflow: hidden;
+	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .15);
+	   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .15);
+	        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .15);
+}
+
+div.section div.header {
+	color: #606060;
+	padding: 10px 15px;
+	position: relative;
+}
+
+div.section div.header h5 {
+	color: #333;
+	margin: 0;
+}
+
+div.section div.header a {
+	color: #333;
+	position: absolute;
+	right: 15px;
+	top: 12px;
+}
+
+div.section div.body {
+	border-top: 1px solid #efefef;
+	padding: 15px 15px 0;
+	position: relative;
+}
+
+div#map-section.section {
+	margin-bottom: 0;
+	position: fixed;
+	top: 45px;
+	bottom: 5px;
+}
+
+div.section div#map-container {
+	position: relative;
+	margin-bottom: 15px;
+	min-height: 300px;
+}
+
+div.section div#global-map {
+	position: absolute !important;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+div#notice.section div.alert {
+	margin-bottom: 10px;
+}
+
+div#notice.section div.alert:last-child {
+	margin-bottom: 15px;
+}
+
+div#search.section div.body {
+	padding: 0;
+}
+
+div#search div#filters {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 10px;
+	padding: 10px 15px 5px;
+}
+
+div.section ul#vehicles {
+	list-style: none;
+	margin: 0;
+	padding: 10px 15px;
+}
+
+div.section ul#vehicles .checkbox.abnormal,
+div.section ul#vehicles .checkbox.abnormal .icons,
+div#vehicle-modal td.abnormal {
+	color: red;
+}
+
+div#vehicle-modal {
+	margin-left: -480px;
+	width: 960px;
+}
+
+div#vehicle-modal div#local-map {
+	margin-bottom: 20px;
+	min-height: 300px;
+}
+
+div#vehicle-modal h6 {
+	color: #16a085;
+	font-weight: bold;
+	margin: 0 0 10px;
+}
+
+div#vehicle-modal td {
+	width: 16.67%;
+}
+
+div#vehicle-modal td.title {
+	font-weight: bold;
+}
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	div#vehicle-modal {
+		margin-left: -384px;
+		width: 768px;
+	}
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+	div#map-section.section {
+		margin-bottom: 20px;
+		position: relative;
+		top: 0;
+		bottom: 0;
+	}
+
+	ul#vehicles li.vehicle label.checkbox {
+		margin-bottom: 0;
+	}
+
+	ul#vehicles li.vehicle div.span8 {
+		text-align: left;
+	}
+
+	div#vehicle-modal {
+		margin-left: auto;
+		width: auto;
+	}
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+}

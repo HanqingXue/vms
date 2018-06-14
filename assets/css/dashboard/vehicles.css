@@ -1,0 +1,91 @@
+div#content {
+	width: 75%;
+}
+
+div#filters {
+	margin: 20px 0 0;
+}
+
+div#filters div.section {
+	background-color: #fafafa;
+	border: 2px solid #ccc;
+	margin: 5px 0;
+	overflow: hidden;
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+	        border-radius: 4px;
+}
+
+div#filters div.section div.header {
+	background: #fff;
+	height: 40px;
+	overflow: hidden;
+	padding: 10px;
+	position: relative;
+}
+
+div#filters div.section div.header h5 {
+	font-weight: bold;
+}
+
+div#filters div.section div.header button.btn {
+	position: absolute;
+	top: 10px;
+}
+
+div#filters div.section div.header button.btn-primary {
+	right: 80px;
+}
+
+div#filters div.section div.header button.btn-info {
+	right: 10px;
+}
+
+div#filters div.section div.body {
+	border-top: 2px solid #ccc;
+	padding: 10px;
+}
+
+table#vehicles {
+	border: 1px solid #e8e8e8;
+	margin: 20px 0 0;
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.1);
+	   -moz-box-shadow: 0 0 5px rgba(0,0,0,0.1);
+	        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+table#vehicles thead {
+	background-color: #16a085;
+	color: #fff;
+}
+
+table#vehicles thead th {
+	text-align: right;
+	vertical-align: middle;
+}
+
+table#vehicles tbody td {
+	text-align: right;
+}
+
+div#vehicle-modal div#map-container {
+	position: relative;
+}
+
+div.datetimepicker {
+	background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .2);
+    display: none;
+	opacity: 1;
+	visibility: visible;
+	width: 200px;
+}
+
+div#vehicle-modal div#amap {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
