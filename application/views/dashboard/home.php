@@ -4,7 +4,7 @@
   
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>酒店预订专家_艺龙网移动版</title>
+    <title>92农家乐移动版</title>
     <meta name="full-screen" content="yes">
     <meta name="browsermode" content="application">
     <link rel="icon shortcut bookmark" href="data:;base64,iVBORw0KGgo=">
@@ -18,10 +18,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="files/homepage.css">
-    <link rel="stylesheet" href="files/idangerous.swiper.css">
+    <link rel="stylesheet"  href=" <?php echo base_url('/assets/css/homepage.css'); ?>">
+    <link rel="stylesheet"  href=" <?php echo base_url('/assets/css/idangerous.swiper.css'); ?>">
     <style type="text/css">.validate-code-by-intercept{position:absolute;top:50%;left:50%;margin-top:-120px;margin-left:-153px;padding-top:10px;height:220px;width:306px;z-index:15000;background-color:#fff;text-align:center;font-size:16px;font-weight:700;color:#353535}.validate-code-by-intercept .form-li{clear:both;height:44px;line-height:44px;margin:3px 12px}.validate-code-by-intercept .form-li2{overflow:hidden;border-radius:5px;border:1px solid #ddd;background-clip:padding-box;margin-bottom:10px}.validate-code-by-intercept input.txt{width:100%;padding:11px 10px 11px 13px;display:block;margin:0;border:0;background:0;font:16px/1.4 Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif}.validate-code-by-intercept .submit{font-size:1.1rem;width:100%;height:40px;line-height:40px;text-align:center;color:#fff;border-radius:5px;border-width:0;background-color:#e65749;margin:0 0 10px}</style>
-    <script type="text/javascript" id="cfp__script" async="" src="files/mchlorofp.js"></script>
+    <script type="text/javascript" id="cfp__script" async=""  src =" <?php echo base_url('/assets/js/mchlorofp.js'); ?>"></script>
   </head>
   
   <body>
@@ -29,27 +29,8 @@
       <div class="page page-on-center" data-blend="layer" data-blend-id="h5_home" id="uniq22" data-title-id="h5_home">
         <div class="page-content page-search">
           <span class="logo"></span>
-          <div class="swiper-container swiper-container-horizontal">
-            <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-2376px, 0px, 0px);">
-              <div class="swiper-slide swiper-slide-duplicate" style="background-image: url(); width: 396px;" data-swiper-slide-index="3"></div>
-              <div class="swiper-slide swiper-slide-duplicate" style="background-image: url(); width: 396px;" data-swiper-slide-index="4"></div>
-              <div class="swiper-slide" style="background-image: url(); width: 396px;" data-swiper-slide-index="0"></div>
-              <div class="swiper-slide" style="background-image: url(); width: 396px;" data-swiper-slide-index="1"></div>
-              <div class="swiper-slide" style="background-image: url(); width: 396px;" data-swiper-slide-index="2"></div>
-              <div class="swiper-slide swiper-slide-prev" style="background-image: url(); width: 396px;" data-swiper-slide-index="3"></div>
-              <div class="swiper-slide swiper-slide-active" style="background-image: url(); width: 396px;" data-swiper-slide-index="4"></div>
-              <div class="swiper-slide swiper-slide-duplicate swiper-slide-next" style="background-image: url(); width: 396px;" data-swiper-slide-index="0"></div>
-              <div class="swiper-slide swiper-slide-duplicate" style="background-image: url(); width: 396px;" data-swiper-slide-index="1"></div>
+            <div class="swiper-slide swiper-slide-duplicate" style="background-image: url('<?php echo base_url('/assets/img/title.jpg'); ?>'); width: 100%">
             </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination swiper-pagination-clickable">
-              <span class="swiper-pagination-bullet"></span>
-              <span class="swiper-pagination-bullet"></span>
-              <span class="swiper-pagination-bullet"></span>
-              <span class="swiper-pagination-bullet"></span>
-              <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
-            </div>
-          </div>
           <div class="search-wrap">
             <div class="search-lb">
               <ul class="search-list">
@@ -109,45 +90,20 @@
           </div>
           <div class="search-nav">
             <ul class="search-nav-list">
-              <li class="tjclick icon-hot" data-tj="{&quot;cspot&quot;:&quot;flight&quot;}">
-                <a href="http://m.elong.com/flight/">
-                  <i class="icon-nav9"></i>
-                  <span>机票</span></a>
-              </li>
-              <li class="isnearby tjclick" data-tj="{&quot;cspot&quot;:&quot;nearby&quot;}">
-                <a href="javascript:void 0">
-                  <i class="icon-nav1"></i>
-                  <span>附近</span></a>
-              </li>
-              <li class="tjclick" data-tj="{&quot;cspot&quot;:&quot;globalhotel&quot;,&quot;if&quot;:&quot;110004&quot;,&quot;ch&quot;:&quot;h5globalhotel&quot;}">
-                <a href="http://m.elong.com/ihotel/?if=110004&amp;ch=globalhotel">
-                  <i class="icon-nav3"></i>
-                  <span>国际</span></a>
-              </li>
-              <li class="tjclick" data-tj="{&quot;cspot&quot;:&quot;ticket&quot;}">
-                <a href="http://m.elong.com/railway/home.html">
-                  <i class="icon-nav8"></i>
-                  <span>火车票</span></a>
-              </li>
-              <li class="tjclick" data-tj="{&quot;cspot&quot;:&quot;bus&quot;}">
-                <a href="http://m.elong.com/my/tc/bus/index">
-                  <i class="icon-nav10"></i>
-                  <span>汽车票</span></a>
-              </li>
               <li class="tjclick" data-tj="{&quot;cspot&quot;:&quot;globalhotel&quot;,&quot;if&quot;:&quot;110020&quot;,&quot;ch&quot;:&quot;h5bnb&quot;}">
                 <a href="http://m.elong.com/minsu/?if=110020&amp;ch=h5bnb">
                   <i class="icon-nav5"></i>
-                  <span>民宿</span></a>
+                  <span>农家民宿</span></a>
               </li>
               <li class="tjclick" data-tj="{&quot;cspot&quot;:&quot;globalhotel&quot;,&quot;if&quot;:&quot;110019&quot;,&quot;ch&quot;:&quot;h5clockhotel&quot;}">
                 <a href="https://m.elong.com/clockhotel/0101/nlist/?if=110019&amp;ch=h5clockhotel&amp;neednear=1">
-                  <i class="icon-nav4"></i>
-                  <span>钟点房</span></a>
+                  <i class="icon-nav7"></i>
+                  <span>景点</span></a>
               </li>
               <li class="tjclick" data-tj="{&quot;cspot&quot;:&quot;local&quot;,&quot;if&quot;:&quot;11004&quot;,&quot;ch&quot;:&quot;h5local&quot;}">
                 <a href="http://m.elong.com/trip/?from=elongh5&amp;if=11004&amp;ch=h5local">
                   <i class="icon-nav6"></i>
-                  <span>攻略</span></a>
+                  <span>攻略美文</span></a>
               </li>
               <li class="tjclick" data-tj="{&quot;cspot&quot;:&quot;spotticket&quot;,&quot;if&quot;:&quot;12774&quot;,&quot;ch&quot;:&quot;spotticketh5&quot;}">
                 <a class="search-nav-hi" data-tmp-href="//m.elong.com/scenery/?ch=spotticketh5&amp;if=12774#/homepage?cityIdN={{city}}" href="http://m.elong.com/scenery/?ch=spotticketh5&amp;if=12774#/homepage?cityIdN=0101">
@@ -157,7 +113,7 @@
               <li class="tjclick" data-tj="{&quot;cspot&quot;:&quot;offprice&quot;,&quot;if&quot;:&quot;12579&quot;,&quot;ch&quot;:&quot;h5offprice&quot;}">
                 <a href="http://m.elong.com/sales/index.html?if=12579&amp;ch=h5offprice">
                   <i class="icon-nav2"></i>
-                  <span>特惠</span></a>
+                  <span>农家特产</span></a>
               </li>
             </ul>
           </div>
@@ -165,16 +121,16 @@
             <div class="search-tool-tit">
               <i class="search-tool-i3"></i>我的</div>
             <ul class="search-tool-list">
-              <li class="tjclick" data-tj="{&quot;cspot&quot;:&quot;usercenter&quot;,&quot;if&quot;:&quot;110011&quot;,&quot;ch&quot;:&quot;h5usercenter&quot;}">
-                <a href="http://m.elong.com/my/account/index/?if=110011&amp;ch=h5usercenter">
+              <li class="tjclick">
+                <a href="">
                   <i class="search-tool-i1"></i>账户</a>
               </li>
-              <li class="tjclick" data-tj="{&quot;cspot&quot;:&quot;order&quot;,&quot;if&quot;:&quot;110009&quot;,&quot;ch&quot;:&quot;h5order&quot;}">
-                <a href="http://m.elong.com/my/account/orderlist/?if=110009&amp;ch=h5order">
+              <li class="tjclick">
+                <a href="">
                   <i class="search-tool-i2"></i>订单</a>
               </li>
-              <li class="tjclick" data-tj="{&quot;cspot&quot;:&quot;callus&quot;,&quot;if&quot;:&quot;110010&quot;,&quot;ch&quot;:&quot;h5callus&quot;}">
-                <a href="tel:4006661166">
+              <li class="tjclick">
+                <a href="">
                   <i class="search-tool-i3"></i>电话</a>
               </li>
             </ul>
@@ -1175,11 +1131,11 @@
         }
       }
       if (typeof s == "undefined") window["s"] = {};</script>
-    <script src="files/base.js" type="text/javascript"></script>
-    <script src="files/homepage.js" type="text/javascript"></script>
-    <script src="files/geolocation.min.js" type="text/javascript"></script>
-    <script src="files/bridge-1.2.1.js" type="text/javascript" async="async"></script>
-    <script type="text/javascript" src="files/tjmvt.js"></script>
+    <script src =" <?php echo base_url('/assets/js/base.js'); ?>" type="text/javascript"></script>
+    <script src =" <?php echo base_url('/assets/js/homepage.js'); ?>" type="text/javascript"></script>
+    <script src =" <?php echo base_url('/assets/js/geolocation.min.js'); ?>" type="text/javascript"></script>
+    <script src =" <?php echo base_url('/assets/js/bridge-1.2.1.js'); ?>" type="text/javascript"></script>
+    <script src =" <?php echo base_url('/assets/js/tjmvt.js'); ?>" type="text/javascript"></script>
     <script type="text/javascript">if (typeof TJObject != 'undefined') {
         TJObject.et = "show";
         TJObject.st = new Date().getTime();
@@ -1202,8 +1158,9 @@
         if (TJObject.pt) tjMVT.setData(TJObject);
       }
       $('.pages').off("click", ".tjclick", tjClickEvent).on("click", ".tjclick", tjClickEvent);</script>
-    <script type="text/javascript" src="files/adkiller.js"></script>
-    <script type="text/javascript" src="files/fingerprint.js" async="" defer=""></script>
+     <script src =" <?php echo base_url('/assets/js/adkiller.js'); ?>" type="text/javascript"></script>    
+    <script src =" <?php echo base_url('/assets/js/fingerprint.js'); ?>" type="text/javascript"></script>
+   
     <script type="text/javascript">(function() {
         var siteId = '9b1ea5a517ad',
         url = 'files/mchlorofp.js?siteId=' + siteId,
