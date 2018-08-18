@@ -20,7 +20,19 @@ class Accounts extends CI_Controller {
 	 * It will render to login page.
 	 */
 	public function index() {
+		$this->load->view('accounts/accounts.php');
+	}
+
+	public function order() {
+		$this->load->view('accounts/order.php');
+	}
+
+	public function login() {
 		$this->load->view('accounts/login.php');
+	}
+
+	public function reg() {
+		$this->load->view('accounts/reg.php');
 	}
 }
 

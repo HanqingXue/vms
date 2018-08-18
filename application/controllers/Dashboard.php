@@ -13,9 +13,6 @@ class Dashboard extends CI_Controller {
         parent::__construct();
 
         $this->load->helper('url');
-        $this->load->model('Vehicle_model');
-        $this->load->model('Option_model');
-        $this->load->model('Material_model');
         $this->load->model('Device_model');
     }
 
@@ -24,43 +21,13 @@ class Dashboard extends CI_Controller {
      * It will render to dashboard page.
      */
     public function index() {
-        $vehicles           = $this->Vehicle_model->get_vehicles();
-        $number_of_vehicles = $vehicles == NULL ? 0 : count($vehicles);
-        $options            = $this->get_options();
+        $this->load->view('dashboard/indexcopy.php');
 
-        $this->load->view('dashboard/index.php', array(
-            'number_of_vehicles'    => $number_of_vehicles,
-            'vehicles'              => $vehicles,
-            'options'               => $options,
-        ));
-    }
-
-    private function get_options() {
-        $options_array = $this->Option_model->get_options();
-        $options_map   = array();
-
-        foreach ( $options_array as $option ) {
-            $option_key     = $option['option_key'];
-            $options_map[$option_key]  = array(
-                'option_key'    => $option_key,
-                'option_name'   => $option['option_name'],
-                'option_value'  => $option['option_value'],
-            );
-        }
-        return $options_map;
     }
 
     /**
      * Get the information of a vehicle.
      */
-    public function get_vehicle() {
-        $vehicle_id  = $this->input->get('vehicle_id');
-        $vehicle     = $this->Vehicle_model->get_vehicle($vehicle_id);
-
-        echo json_encode(array(
-            'vehicle'   => $vehicle,
-        ));
-    }
 
     public function get_device() {
         $device_id = $this->input->get('device_id');
@@ -74,130 +41,24 @@ class Dashboard extends CI_Controller {
     /**
      * The page used for vehicle management.
      */
-    public function vehicles() {
-        $vehicles           = $this->Vehicle_model->get_vehicles();
-        $number_of_vehicles = $vehicles == NULL ? 0 : count($vehicles);
+    public function notes() {
+        $this->load->view('dashboard/notes.php');
 
-        $this->load->view('dashboard/vehicles.php', array(
-            'number_of_vehicles'    => $number_of_vehicles,
-            'vehicles'              => $vehicles,
-        ));
-    }
-
-    /**
-     * Get track of vehicle.
-     * @return the track of vehicle
-     */
-    public function get_track_of_vehicle() {
-        $vehicle_id     = $this->input->get('vehicle_id');
-        $start_time     = $this->input->get('start_time');
-        $end_time       = $this->input->get('end_time');
-
-        $vehicle        = $this->Vehicle_model->get_vehicle($vehicle_id);
-        $vehicle_name   = $vehicle['vehicle_name'];
-
-        $file_name      = './application/cache/' . $vehicle_name . '.json';
-        if ( file_exists($file_name) ) {
-            $track      = file_get_contents($file_name);
-            echo $track;
-        }
-    }
-
-    /**
-     * The page used for material dispatch.
-     */
-    public function materials() {
-        $vehicles               = $this->Vehicle_model->get_vehicles();
-        $materials              = $this->Material_model->get_materials();
-        $number_of_materials    = $materials == NULL ? 0 : count($materials);
-
-        $this->load->view('dashboard/materials.php', array(
-            'vehicles'              => $vehicles,
-            'number_of_materials'   => $number_of_materials,
-            'materials'             => $materials,
-        ));
-    }
-
-    /**
-     * Get material allocation for a material.
-     */
-    public function get_material_allocation() {
-        $material_id            = $this->input->get('material_id');
-        $material_allocation    = $this->Material_model->get_material_allocation($material_id);
-
-        echo json_encode($material_allocation);
-    }
-
-    /**
-     * Dispatch materials.
-     */
-    public function do_dispatch_action() {
-        $material_id        = $this->input->post('material_id');
-        $from_vehicle_id    = $this->input->post('from_vehicle');
-        $to_vehicle_id      = $this->input->post('to_vehicle');
-        $dispatch_amount    = $this->input->post('dispatch_amount');
-
-        $is_successful      = $this->Material_model->update_material_allocation(
-                                $material_id, $from_vehicle_id, $to_vehicle_id, $dispatch_amount);
-        echo json_encode(array(
-            'is_successful' => $is_successful,
-        ));
     }
 
 
-   /**
-    * @return [type]
-    */
-    public function do_add_vehicle_action() {
-        $vehicle_name          = $this->input->post('vehicle_name');
-        $vehicle_passengers    = $this->input->post('vehicle_passengers');
-        $vehicle_drive_mode_id = $this->input->post('vehicle_drive_mode_id');
-        $vehicle_category_id   = $this->input->post('vehicle_category_id');
-        $vehicle_displacement  = $this->input->post('vehicle_displacement');
+    public function tickets() {
 
-      $this->Vehicle_model->add_new_vehicle($vehicle_name, $vehicle_passengers, $vehicle_drive_mode_id, 
-            $vehicle_category_id, $vehicle_displacement);
+        $this->load->view('dashboard/tickets.php');
+
     }
 
-    /***
-    *   Add device
-    */
-    public function do_add_device_action() {
-        $device_name             = $this->input->post('device_name');
-        $device_number           = $this->input->post('device_number');
-        $device_phone_num        = $this->input->post('device_phone_num');
-        $device_phone_category   = $this->input->post('device_phone_category');
-        $device_message_category = $this->input->post('device_message_category');
-        $device_install_time     = $this->input->post('device_install_time');
-
-        $this->Device_model->add_new_device($device_name, $device_number, $device_phone_num, 
-            $device_phone_category, $device_message_category, $device_install_time);
+    public function hotels() {
+        $this->load->view('dashboard/hotels.php');
     }
-
-    public function do_update_device_action() {
-        $device_name             = $this->input->post('device_name');
-        $device_number           = $this->input->post('device_number');
-        $device_phone_num        = $this->input->post('device_phone_num');
-        $device_phone_category   = $this->input->post('device_phone_category');
-        $device_message_category = $this->input->post('device_message_category');
-        $device_install_time     = $this->input->post('device_install_time');
-
-        $this->Device_model->update_device($device_name, $device_number, $device_phone_num, 
-            $device_phone_category, $device_message_category, $device_install_time);
-    }
-
-    /***
-    * Update the info of vehicle
-    */
-    public function do_update_vehicle_action() {
-        $vehicle_name          = $this->input->post('vehicle_name');
-        $vehicle_passengers    = $this->input->post('vehicle_passengers');
-        $vehicle_drive_mode_id = $this->input->post('vehicle_drive_mode_id');
-        $vehicle_category_id   = $this->input->post('vehicle_category_id');
-        $vehicle_displacement  = $this->input->post('vehicle_displacement');
-
-        $this->Vehicle_model->update_vehicle($vehicle_name, $vehicle_passengers, $vehicle_drive_mode_id, 
-            $vehicle_category_id, $vehicle_displacement);
+   
+    public function travels() {
+        $this->load->view('dashboard/travels.php');
     }
 
     /**
@@ -218,13 +79,113 @@ class Dashboard extends CI_Controller {
         ));
     }
 
-    public function all_devices() {
-        $devices           = $this->Device_model->get_devices();
-        $number_of_devices = $devices == NULL ? 0 : count($devices);
 
-        $this->load->view('dashboard/all-devices.php',array(
-            'number_of_devices'    => $number_of_devices,
-            'devices'              => $devices,
+    public function get_hotel() {
+        $addr = $this->input->get('addr');
+        $hotelName = $this->input->get('hotelName');
+        $checkdate = $this->input->get('checkdate');
+
+        $rooms = $this->Device_model->get_hotel($addr, $hotelName, $checkdate);
+
+        $this->load->view('dashboard/result.php', array(
+            'name' => $rooms['hotel_name'],
+            'price' => $rooms['hotel_price'],
+            'addr' => $rooms['hotel_addr'],
+            'id' => $rooms['hotel_id'],
+            'type' => $rooms['hotel_type'],
+            'wifi' => $rooms['hotel_wifi']
+        ));
+
+    }
+
+    public function get_rooms() {
+        $hotelid = $this->input->get('hotelid');
+        $rooms = $this->Device_model->get_rooms();
+
+        echo gettype($rooms);
+        echo count($rooms);
+        echo json_encode($rooms);
+
+        foreach ($rooms as $room) {
+            # code...
+            echo "\n";
+        }
+    }
+
+    public function details() {
+        $htid = $this->input->get('htid');
+        $hotel_detail = $this->Device_model->get_room_details($htid);
+        $room_list = $this->Device_model->get_rooms($htid);
+
+        $this->load->view('dashboard/hoteldetail.php', array(
+            'details' => $hotel_detail[0],
+            'roomlist' =>  $room_list,
+        ));
+    }
+
+    public function attract() {
+    	$keyword = $this->input->get('keyword');
+    	$attr = $this->Device_model->get_attractions($keyword);
+
+    	if(count($attr) > 0) {
+    		$this->load->view('dashboard/attract.php', array(
+    			'keyword' => $keyword,
+    			'attrs' => $attr,
+        	));
+        } else {
+        	$this->load->view('dashboard/empty.php', array(
+    			'keyword' => $keyword,
+        	));
+        }
+    }
+
+    public function bookticket() {
+        $id = $this->input->get('id');
+        $attr = $this->Device_model->get_attractions_byid($id);
+        $tickets = $this->Device_model->get_ticket_by_attraction_id($id);
+        
+        echo json_encode($tickets);
+        $this->load->view('dashboard/ticketbook.php', array(
+            'attrs' => $attr[0],
+            'tickets'=> $tickets,
+        ));
+    }
+
+    public function youji() {
+        $keyword = $this->input->get('keyword');
+        $travels = $this->Device_model->get_travels($keyword);
+
+        $this->load->view('dashboard/go.php', array(
+            'travels' => $travels,
+            'keyword' => $keyword,
+        ));
+    }
+
+    public function xiangqing() {
+        $id = $this->input->get('id');
+        $travels = $this->Device_model->get_travel_content($id);
+        $logs = $this->Device_model->get_logs($id);
+        
+        $this->load->view('dashboard/traveldetail.php', array(
+            'travels' => $travels,
+            'logs' => $logs,
+            'keyword' => $id
+        ));
+    }
+
+    public function goodsdetail() {
+        $id = $this->input->get('id');
+        $goods = $this->Device_model->get_goods_byid($id);
+
+        $this->load->view('dashboard/goodsdetail.php', array(
+            'goods' => $goods[0],
+        ));
+    }
+
+    public function goods() {
+        $goods = $this->Device_model->get_init_goods();
+        $this->load->view('dashboard/good.php', array(
+            'goods' => $goods
         ));
     }
 

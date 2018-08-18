@@ -1,4 +1,4 @@
-<?php
+    <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Vehicle_model extends CI_Model {
@@ -20,6 +20,20 @@ class Vehicle_model extends CI_Model {
         $result_set = $this->db->query($sql);
         return $result_set->result_array();
     }
+
+    public function get_hotel($addr, $hotelName, $checkdate) {
+        $sql = 'SELECT * FROM vms_hotel WHERE hotel_name= ? AND hotel_addr = ? AND hotel_check_day = ?';
+        
+        $result_set = $this->db->query($sql, array(
+            'hotel_name'   => $hotelName,
+            'hotel_addr'  => $addr,
+            'hotel_check_day' => $checkdate
+        ));
+        return $result_set->row_array();
+    }
+
+
+
 
     /**
      * 列出某个车辆的基本信息.
